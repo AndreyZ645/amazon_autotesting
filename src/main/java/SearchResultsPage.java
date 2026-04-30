@@ -17,8 +17,14 @@ public class SearchResultsPage {
     }
 
     private final By firstItemCard = By.xpath("(//div[@role='listitem'])[1]");
+    private final By addToListButton = By.xpath("//a[@aria-label='Add to List']");
 
     public WebElement fetchFirstCard() {
        return wait.until(ExpectedConditions.visibilityOfElementLocated(firstItemCard));
+    }
+
+    public SignInPage addToList() {
+        wait.until(ExpectedConditions.elementToBeClickable(addToListButton)).click();
+        return new SignInPage(driver);
     }
 }
