@@ -13,7 +13,6 @@ public class SearchTest extends BaseTest{
         SearchResultsPage resultsPage = mainPage.makeQuery(query);
         String description = resultsPage.fetchFirstCard().getText().toLowerCase();
         boolean mathesQuery = Arrays.stream(query.split("\\s+")).allMatch(description::contains);
-        Assertions.assertTrue(mathesQuery, "Item matches the query. Search works correctly");
+        Assertions.assertTrue(mathesQuery, "Item doesn't match the query");
     }
-
 }
