@@ -19,6 +19,7 @@ public class BaseTest {
     public static void setUp() {
         ChromeOptions chromeOptions = new ChromeOptions();
         String hubUrl = "http://localhost:4444";
+
         try {
             driver = new RemoteWebDriver(new URL(hubUrl), chromeOptions);
         } catch (MalformedURLException e) {
